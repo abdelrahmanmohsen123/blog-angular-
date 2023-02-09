@@ -1,0 +1,46 @@
+
+
+<div class="container" *ngIf="post">
+
+
+  <div class="card my-2 " >
+    <div class="card-header">
+      Post
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.body}}</p>
+      <a routerLink="/{{post.id}}" class="btn btn-primary">Go details</a>
+    </div>
+  </div>
+<div class="container my-2" *ngIf="postComments">
+  <div class="row">
+    <div class="col-12">
+      <h3>all comments</h3>
+    </div>
+    <div class="col-3 my-3" *ngFor="let comment of postComments">
+      <!-- <app-comment [comment]='comment'>
+
+      </app-comment> -->
+      <div class="card col-6" style="width: 18rem; ">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{comment.id}}  - {{comment.name}}</li>
+          <!-- <li class="list-group-item">{{comment.email}}</li> -->
+          <li class="list-group-item">Comment : {{comment.body}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+</div>
+<div class="container my-5" *ngIf="!post">
+  <div class="row">
+    <div class="col-12 alert alert-danger">
+        not found
+    </div>
+  </div>
+</div>

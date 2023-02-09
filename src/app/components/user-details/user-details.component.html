@@ -1,0 +1,30 @@
+<app-navpar >
+
+</app-navpar>
+<!-- <p>{{user}}</p> -->
+<app-user [user]="user">
+
+</app-user>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-4">
+      <h2>
+        All Posts 
+      </h2>
+
+    </div>
+    <div class="col-3" *ngFor="let post of userPosts">
+      <div class="card my-4" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">title post : {{post.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">id :{{post.id}}</h6>
+          <p class="card-text">{{post.body}}</p>
+
+          <a href="{{post.id}}"  class="card-link btn btn-success">details</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
